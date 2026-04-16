@@ -90,6 +90,8 @@ window.assignTextureToPart = function(name, canvasElt) {
         map: tex,
         roughness: 0.3,
         metalness: 0.1,
+        transparent: true,
+        alphaTest: 0.01,
         side: THREE.DoubleSide
     });
     meshes[name].material = mat;
