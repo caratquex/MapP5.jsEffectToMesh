@@ -26,7 +26,7 @@ function initThreeJS() {
     // Lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
-    
+
     const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
     dirLight.position.set(5, 5, 5);
     scene.add(dirLight);
@@ -72,20 +72,20 @@ function initThreeJS() {
     animateThreeJS();
 }
 
-window.assignTextureToPart = function(name, canvasElt) {
+window.assignTextureToPart = function (name, canvasElt) {
     if (!meshes[name]) return;
-    
+
     // Dispose old texture if exists to avoid memory leak
     if (window.partTextures[name]) {
         window.partTextures[name].dispose();
     }
-    
+
     let tex = new THREE.CanvasTexture(canvasElt);
     tex.minFilter = THREE.LinearFilter;
     tex.magFilter = THREE.LinearFilter;
     tex.encoding = typeof THREE.sRGBEncoding !== 'undefined' ? THREE.sRGBEncoding : 3001; // Handle older r128 property
     window.partTextures[name] = tex;
-    
+
     let mat = new THREE.MeshStandardMaterial({
         map: tex,
         roughness: 0.3,
@@ -97,7 +97,7 @@ window.assignTextureToPart = function(name, canvasElt) {
     meshes[name].material = mat;
 };
 
-window.resetPartMaterial = function(name) {
+window.resetPartMaterial = function (name) {
     if (meshes[name] && originalMaterials[name]) {
         meshes[name].material = originalMaterials[name];
     }
