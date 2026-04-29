@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Mode</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        #defaultCanvas0 {
+            display: block !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .ui-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 280px;
+            color: #eee;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .ui-container h2 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .ui-group {
+            margin-bottom: 15px;
+        }
+
+        .ui-group label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .nav-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #A8CE40;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border: 1px solid rgba(168, 206, 64, 0.5);
+            padding: 10px 16px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            background: rgba(20, 20, 25, 0.6);
+            transition: all 0.2s ease;
+            z-index: 200;
+        }
+
+        .nav-link:hover {
+            background: #A8CE40;
+            color: #000;
+            border-color: #A8CE40;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="nav-link">Switch to 3D View</a>
+    <a href="debug.html" class="nav-link" style="right: 170px;">Switch to 2D Debug</a>
+
+    <script src="my-three-scene.js"></script>
+    <script src="p5.js/filter.js"></script>
+    <script src="p5.js/filter-sketch.js"></script>
+
+</body>
+
+</html>

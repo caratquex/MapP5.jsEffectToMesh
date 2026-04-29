@@ -14,7 +14,7 @@
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #0a0a0a;
+            background-color: #bfbfbf;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
@@ -103,8 +103,8 @@
             left: 340px;
             /* Space out from UI panel */
             z-index: 100;
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 500px;
             background: rgba(15, 15, 20, 0.85);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -153,9 +153,12 @@
 <body>
 
     <a href="debug.html" class="nav-link">Switch to 2D Debug</a>
+    <a href="filter.html" class="nav-link" style="right: 180px;">Switch to Filter Mode</a>
 
     <!-- Load external scripts instead of inline code -->
     <script src="my-three-scene.js"></script>
+    <script src="p5.js/filter.js"></script>
+    <script src="p5.js/p5-ASCIIFungus.js"></script>
     <script src="p5.js/my-p5-sketch.js"></script>
 
 </body>
